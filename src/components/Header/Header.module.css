@@ -1,0 +1,17 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+  .header {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+
+      .title {
+        color: #fff;
+        letter-spacing: 1.5rem;
+      }
+    }
+  }
+}

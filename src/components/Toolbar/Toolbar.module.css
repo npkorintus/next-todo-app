@@ -1,0 +1,33 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+  .toolbar {
+    height: 60px;
+    background-color: var(--gray-50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+    .clearCompleted {
+      cursor: pointer;
+    }
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .toolbar {
+    /* padding: 1.5rem 4rem; */
+  }
+}
+
+/* Dark mode */
+@media only screen and (min-width: 0px) {
+  :global([data-theme='dark']) {
+    .toolbar {
+      background-color: var(--navy-900);
+    }
+  }
+}

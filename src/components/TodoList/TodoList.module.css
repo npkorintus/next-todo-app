@@ -1,0 +1,67 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+  .todoListContainer {
+    box-shadow: 5px 5px 100px var(--purple-300);
+  }
+
+  .todoList {
+    background-color: var(--gray-50);
+    padding: 0;
+
+    /* li {
+      border-bottom: 1px solid var(--gray-300);
+    } */
+
+    /* &:first-child {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    } */
+
+    .todoListItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+
+    .deleteTodo {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  }
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  /* .todoListItem {
+    padding: 1.5rem 2rem;
+
+    .deleteTodo {
+      display: none;
+    }
+
+        &:hover .deleteTodo {
+        display: block;
+      }
+  } */
+}
+
+/* Dark mode styles */
+@media only screen and (min-width: 0px) {
+  :global([data-theme='dark']) {
+    .todoListContainer {
+      box-shadow: none;
+    }
+
+    .todoList {
+      background-color: var(--navy-900);
+      padding: 0;
+
+      li {
+        border-bottom: 1px solid var(--purple-800);
+      }
+    }
+  }
+}

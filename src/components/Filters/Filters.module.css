@@ -1,0 +1,43 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+  .filters {
+    margin-top: 1rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--gray-50);
+    margin-top: 1rem;
+    padding: 1rem 0;
+    justify-content: center;
+    border-radius: 0.5rem;
+
+    .filter {
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+
+      &[data-active='true'] {
+        color: var(--primary-blue);
+      }
+    }
+  }
+}
+
+/* Tablet and larger screen */
+@media only screen and (min-width: 768px) {
+  .filters {
+    justify-content: center;
+    margin-top: 0;
+  }
+}
+
+/* Dark mode */
+@media only screen and (min-width: 0px) {
+  :global([data-theme='dark']) {
+    .filters {
+      background-color: var(--navy-900);
+    }
+  }
+}

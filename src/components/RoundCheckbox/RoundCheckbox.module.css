@@ -1,0 +1,83 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    user-select: none;
+    font-size: 16px;
+  }
+
+  /* Hide native checkbox */
+  .checkboxContainer input {
+    display: none;
+  }
+
+  /* Custom round checkbox */
+  .customCheckbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--purple-300);
+    border-radius: 50%;
+    position: relative;
+    /* transition: all 0.2s ease; */
+
+    &:hover {
+      border: 2px solid var(--check-bg);
+      background: var(--check-bg);
+      /* background-color: yellow; */
+      /* border-top: 1px solid hsl(192, 100%, 67%);
+      border-left: 1px solid hsl(192, 100%, 67%);
+      border-right: 1px solid hsl(280, 87%, 65%);
+      border-bottom: 1px solid hsl(280, 87%, 65%); */
+    }
+  }
+
+  /* Checkmark image */
+  .customCheckbox::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/icon-check.svg"); /* your image */
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  /* Checked state */
+  .checkboxContainer.checked .customCheckbox {
+    /* background-color: #4caf50; */
+    /* border-color: #4caf50; */
+    background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border-top: hsl(192, 100%, 67%);
+    border-left: hsl(192, 100%, 67%);
+    border-right: hsl(280, 87%, 65%);
+    border-bottom: hsl(280, 87%, 65%);
+  }
+
+  .checkboxContainer.checked .customCheckbox::after {
+    opacity: 1;
+  }
+
+  /* Line-through label */
+  .checkboxContainer.checked .checkboxLabel {
+    text-decoration: line-through;
+    color: #888;
+  }
+}
+
+/* Dark mode */
+@media only screen and (min-width: 0px) {
+  :global([data-theme='dark']) {
+    .customCheckbox {
+      border: 2px solid var(--purple-800);
+
+      /* &:hover {
+        border: 2px solid var(--check-bg);
+      } */
+    }
+  }
+}

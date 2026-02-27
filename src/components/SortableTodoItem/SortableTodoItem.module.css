@@ -1,0 +1,50 @@
+/* Mobile */
+@media only screen and (min-width: 0px) {
+    .todoListItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-300);
+
+      .deleteTodo {
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+    }
+  
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .todoListItem {
+    padding: 1.5rem 2rem;
+
+    .deleteTodo {
+      display: none;
+    }
+
+    &:hover .deleteTodo {
+      display: block;
+    }
+  }
+}
+
+/* Dark mode styles */
+/* @media only screen and (min-width: 0px) {
+  [data-theme='dark'] {
+    .todoListContainer {
+      box-shadow: none;
+    }
+
+    .todoList {
+      background-color: var(--navy-900);
+      padding: 0;
+
+      li {
+        border-bottom: 1px solid var(--purple-800);
+      }
+    }
+  }
+} */
