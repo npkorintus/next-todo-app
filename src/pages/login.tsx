@@ -1,8 +1,10 @@
-import { NextPage } from "next";
 import { SubmitEvent, useState } from "react";
+
+import { NextPage } from "next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Login() {
+const Login: NextPage = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState<string>("");
@@ -25,24 +27,32 @@ export default function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h1>Login</h1>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          />
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          />
 
-      <button type="submit">Login</button>
-    </form>
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Need to create an account?{" "}
+        <Link href="/register">Register</Link>
+      </p>
+    </div>
   );
 }
+
+export default Login;

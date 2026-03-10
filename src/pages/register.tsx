@@ -1,5 +1,6 @@
-import { NextPage } from "next";
 import { SubmitEvent, useState } from "react";
+
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -76,8 +77,7 @@ export default function Register() {
       </form>
 
       <p>
-        Already have an account?{" "}
-        <Link href="/login">Login</Link>
+        Already have an account? <Link href="/login">Login</Link>
       </p>
     </div>
   );
