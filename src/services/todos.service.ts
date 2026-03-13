@@ -12,7 +12,7 @@ export const getTodos = async (): Promise<Todo[]> => {
 
     const data: Todo[] = await response.json();
     return data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error fetching todos:", error);
     throw new Error("Failed to fetch todos");
   }
@@ -32,7 +32,7 @@ export const createTodo = async (text: string): Promise<Todo> => {
 
     const data: Todo = await response.json();
     return data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating todo:", error);
     throw new Error("Failed to create todo");
   }
@@ -54,7 +54,7 @@ export const updateTodo = async (todo: Todo): Promise<Todo> => {
 
     const data: Todo = await response.json();
     return data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error updating todo:", error);
     throw new Error("Failed to update todo");
   }
@@ -67,7 +67,7 @@ export const deleteTodo = async (id: string): Promise<void> => {
     if (!response.ok) {
       throw new Error("Failed to delete todo");
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error deleting todo:", error);
     throw new Error("Failed to delete todo");
   }
@@ -83,7 +83,7 @@ export const deleteCompletedTodos = async (): Promise<Todo[]> => {
 
     const data: Todo[] = await response.json();
     return data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error clearing completed todos:", error);
     throw new Error("Failed to clear completed todos");
   }
@@ -103,7 +103,7 @@ export const reorderTodos = async (orderedIds: string[]): Promise<Todo[]> => {
 
     const data: Todo[] = await response.json();
     return data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error reordering todos:", error);
     throw new Error("Failed to reorder todos");
   }
